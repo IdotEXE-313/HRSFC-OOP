@@ -10,7 +10,7 @@ namespace CardClasses
     {
         public int GetScore()
         {
-            int score = 10;
+            int score = 0;
             foreach (var card in cards)
             {
                 int currentRank = card.GetRank();
@@ -29,6 +29,8 @@ namespace CardClasses
                 }
 
             }
+            /*TODO
+             * while number of aces exists and the score is over 21, take away 10 and reduce the number of aces*/
             return score;
         }
     }
