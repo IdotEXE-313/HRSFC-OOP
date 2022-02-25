@@ -10,7 +10,7 @@ namespace CardClasses
         // in Pack.Cards
         // Hand does not create any Cards itself
 
-        private List<Card> cards = new List<Card>();
+        protected List<Card> cards = new List<Card>();
 
         public Card this[int i]
         {

@@ -7,7 +7,11 @@ namespace BlackJackHand_Project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var card = new Card(1, 3);
+            var blackjack = new BlackJackHand();
+
+            blackjack.AddCard(card);
+            Console.WriteLine(blackjack.GetScore()); 
         }
     }
 }
