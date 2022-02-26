@@ -11,6 +11,7 @@ namespace CardClasses
         public int GetScore()
         {
             int score = 0;
+            int numberOfAces = 0;
             foreach (var card in cards)
             {
                 int currentRank = card.GetRank();
@@ -25,12 +26,17 @@ namespace CardClasses
                 }
                 else if(currentRank == 1)
                 {
-                    score = (score + 11 <= 21) ? score += 11 : score+= 1; //If an ace is drawn and adding 11 doesn't exceed 21, then we add 11. If it does exceed 21, we add 1 to the score.
+                    score += 11; //Add 11 as default for Ace
+                    numberOfAces += 1;
                 }
 
             }
-            /*TODO
-             * while number of aces exists and the score is over 21, take away 10 and reduce the number of aces*/
+
+            while(numberOfAces > 0 && score > 21)
+            {
+                score -= 10; // Count ace as one if the score goes over 10
+                numberOfAces--;
+            }
             return score;
         }
     }
